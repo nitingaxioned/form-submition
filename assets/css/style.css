@@ -146,6 +146,7 @@ form{
   background-color: #fafafa;
   border-radius: 25px;
   padding: 20px 5%;
+  margin-bottom: 6px;
 }
 
 .form-group{ 
@@ -224,6 +225,7 @@ input:focus{ outline: none; }
   border-radius: 10px;
   font-size: 14px;
   color: #323232;
+  position: relative;
 }
 
 .card p{ padding: 2px 1%; }
@@ -234,6 +236,8 @@ input:focus{ outline: none; }
   letter-spacing: 1px;
   font-weight: bold;
 }
+
+.remove-me{ display: none;}
 
 /*=================================
   main styling ends here
