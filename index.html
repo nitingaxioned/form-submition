@@ -1,6 +1,6 @@
 <!doctype html>
 <!-- If multi-language site, reconsider usage of html lang declaration here. -->
-<html lang="en"> 
+<html lang="en">
 
 <head>
   <meta charset="utf-8">
@@ -13,10 +13,10 @@
   <!-- Place favicon.ico in the root directory: mathiasbynens.be/notes/touch-icons -->
   <link rel="shortcut icon" href="favicon.ico" />
   <!--font-awesome link for icons-->
-  <link rel="stylesheet" media="screen" href="assets/vendor/font-awesome/css/all.min.css" >
+  <link rel="stylesheet" media="screen" href="assets/vendor/font-awesome/css/all.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <!-- Default style-sheet is for 'media' type screen (color computer display).  -->
-  <link rel="stylesheet" media="screen" href="assets/css/style.css" >
+  <link rel="stylesheet" media="screen" href="assets/css/style.css">
 </head>
 
 <body>
@@ -29,18 +29,75 @@
     <!--header section start-->
     <!--main section start-->
     <main>
-
+      <div class="wrapper">
+        <div class="pop-up">
+          <p class="pop-up-msg hide-me">Information Stored Succsessfully.</p>
+        </div>
+        <form>
+          <div class="form-group">
+            <label for="first-name">First Name :</label>
+            <input type="text" id="first-name">
+            <span class="error hide-me first-name-err">Please enter your first name.</span>
+          </div>
+          <div class="form-group">
+            <label for="last-name">Last Name:</label>
+            <input type="text" id="last-name">
+            <span class="error hide-me last-name-err">Please enter your Last name.</span>
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number:</label>
+            <input type="text" id="phone">
+            <span class="error hide-me phone-err-invalid">Please enter Valid 10 digit Number.</span>
+            <span class="error hide-me phone-err-exists">This Number is alredy in use.</span>
+          </div>
+          <div class="form-group">
+            <label for="mail">E-mail:</label>
+            <input type="text" id="mail">
+            <span class="error hide-me mail-err-invalid">Please enter Valid Email ID.</span>
+            <span class="error hide-me mail-err-exists">This Email is alredy in use.</span>
+          </div>
+          <div class="form-group">
+            <label>Gender:</label>
+            <input type="radio" name="gender" id="gender-male">
+            <label for="gender-male">Male</label>
+            <input type="radio" name="gender" id="gender-female">
+            <label for="gender-female">Female</label>
+          </div>
+          <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password">
+            <span class="error hide-me password-err">Please enter Valid 6 digit Password</span>
+          </div>
+          <div class="form-group">
+            <label for="conform-password">Conform Password:</label>
+            <input type="password" id="conform-password">
+            <span class="error hide-me conform-password-err">Password dose not match</span>
+          </div>
+          <div class="form controls">
+            <input type="button" id="submit-btn" value="submit">
+            <input type="reset" id="clear-btn" value="clear">
+          </div>
+        </form>
+        <div class="cards">
+          <div class="card">
+            <p class="display-name">Nitin Gupta</p>
+            <p class="display">Genger : <span class="display-gender">Male</span></p>
+            <p class="display">Phone Number : <span class="display-number">7397934048</span></p>
+            <p class="display">Email : <span class="display-email">niting@axioned.com</span></p>
+            <p class="display">Password : <span class="display-email">421503@NDG</span></p>
+          </div>
+        </div>
+      </div>
     </main>
     <!--main section end-->
-
     <!--footer section start-->
-    <footer>      
+    <footer>
 
     </footer>
     <!--footer section end-->
-
   </div>
   <!--container end-->
   <script src="assets/js/script.js"></script>
 </body>
+
 </html>
