@@ -113,7 +113,7 @@ header p{
   font-size: 28px;
   color: #4CAF50;
   font-weight: bold;
-  padding: 20px;
+  padding: 20px 0 0;
 }
 
 /*=================================
@@ -124,12 +124,90 @@ header p{
   main styling starts here
 =================================*/
 
+.pop-up{
+  text-align: center;
+  padding: 10px 0;
+}
 
+.pop-up-msg{
+  color: #525252;
+  font-weight: bold;
+  margin-left: 50%;
+  width: 30%;
+  transform: translateX(-50%);
+  padding: 5px;
+  background-color: #cccccc;
+  border-radius: 25px;
+}
 
+form{
+  width: 50%;
+  margin: auto;
+  background-color: #fafafa;
+  border-radius: 25px;
+  padding: 20px 5%;
+}
 
+.form-group{ 
+  margin: 5px 0 0;
+  position: relative;
+}
 
+.form-group > label:first-child{
+  display: block;
+  width: fit-content;
+  margin: 7px 0;
+  color: #525252;
+  font-size: 15px;
+  font-weight: bold;
+}
 
+input[type=text], 
+input[type=password]{
+  width: 100%;
+  padding: 5px 10px;
+  margin: 8px 0 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
 
+.form-group > .gender-lable:first-child{ display: inline-block; }
+input[type=radio]{ margin-left: 5%; }
+input:focus{ outline: none; }
+
+.error{
+  position: absolute;
+  color: #ff5555;
+  font-size: 12px;
+  left: 0;
+  top: 18px;
+}
+
+.form-controls{
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+}
+
+.form-controls input{
+  width: 48%;
+  background-color: #4CAF50;
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  padding: 7px 10px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.form-controls input:hover{ background-color: #323232; }
+
+.hide-me{ visibility: hidden; }
 
 /*=================================
   main styling ends here
