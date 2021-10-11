@@ -206,8 +206,34 @@ input:focus{ outline: none; }
 }
 
 .form-controls input:hover{ background-color: #323232; }
-
 .hide-me{ visibility: hidden; }
+
+.cards{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 60%;
+  margin: auto;
+}
+
+.card{
+  background: #dfdfdf;
+  width: 40%;
+  padding: 20px 2%;
+  margin: 20px 3%;
+  border-radius: 10px;
+  font-size: 14px;
+  color: #323232;
+}
+
+.card p{ padding: 2px 1%; }
+
+.display-name{
+  font-size: 18px;
+  padding: 5px 0;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
 
 /*=================================
   main styling ends here
