@@ -23,9 +23,8 @@ const cfrm_password_err = document.querySelector(".conform-password-err");
 let formData = JSON.parse(localStorage.getItem('formData'));
 
 // Display data in cards
-if(formData!=null){formData.forEach(function(val){ display(val); });}
-console.log(formData!=null);
-console.log(formData);
+if(formData!=null){formData.forEach(function(val){ display(val);});}
+
 //Event Listners
 
 fname.addEventListener("focus", function(){fname_err.classList.add("hide-me")});
@@ -107,12 +106,15 @@ function cnfmPassValidate(){
 function phoneValidate(){
     if( /[6-9]{1}\d{9}/.test(phone.value) && phone.value.length >= 10 ){
         let flag=true;
-        formData.forEach(function(val){ 
-            if(val.phoneNo == phone.value){
-                phone_err_exists.classList.remove("hide-me");
-                flag = false;
-            }
-        });
+        //validating pre exists
+        if(formData!=null){
+            formData.forEach(function(val){ 
+                if(val.phoneNo == phone.value){
+                    phone_err_exists.classList.remove("hide-me");
+                    flag = false;
+                }
+            });
+        }
         return flag;
     }
     else{
@@ -124,12 +126,15 @@ function phoneValidate(){
 function mailValidate(){
     if(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail.value)){
         let flag=true;
-        formData.forEach(function(val){ 
-            if(val.email == mail.value){
-                mail_err_exists.classList.remove("hide-me");
-                flag = false;
-            }
-        });
+        //validating pre exists
+        if(formData!=null){
+            formData.forEach(function(val){ 
+                if(val.email == mail.value){
+                    mail_err_exists.classList.remove("hide-me");
+                    flag = false;
+                }
+            });
+        }
         return flag;
     }
     else{
@@ -144,14 +149,12 @@ function giveGen(){
     else
         return 'Female';
 }
-
+// validate on submit and creat object
 function validate(){
     if(fnameValidate()&&lnameValidate()&&phoneValidate()&&mailValidate()&&passValidate()&&cnfmPassValidate()){
         let tempObj = new createDataObj(fname.value+" "+lname.value,giveGen(),phone.value,mail.value,password.value);
-        if( formData == null ){
-            console.log(formData);
+        if( formData == null )
             formData =[tempObj];
-        }
         else
             formData.push(tempObj);
         localStorage.setItem('formData', JSON.stringify(formData));
@@ -161,7 +164,7 @@ function validate(){
         setTimeout(function(){ pop_msg.classList.add("hide-me"); }, 3000);
     }
 }
-
+//create node and append to display
 function display(tempObj){
     let cardNode = document.querySelector(".remove-me").cloneNode(true);
     cardNode.querySelector(".display-name").innerHTML = tempObj.name;
